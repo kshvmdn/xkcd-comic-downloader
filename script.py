@@ -16,6 +16,11 @@ def get_latest_comic():
 
     return lc_id
 
+img_dir = os.path.expanduser("~/Desktop/xkcd_comics/")
+
+if not os.path.exists(img_dir):
+    os.mkdir(img_dir)
+
 for i in range(0, get_latest_comic()):
     current_working_comic = requests.get("http://xkcd.com/"+str(i+1)+"/").content
     cwc_soup = BeautifulSoup(current_working_comic,"html.parser")
