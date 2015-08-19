@@ -11,7 +11,7 @@ def get_latest_comic():
      # "Permanent link to this comic: http://xkcd.com/1564/"
     lc_string = lc_soup.find(string=re.compile("Permanent"))
 
-    # Parse comic id from lc_link => 1564
+    # Parse comic id from lc_string => 1564
     lc_id = int(re.search(r'\d+', lc_string).group())
 
     return lc_id
