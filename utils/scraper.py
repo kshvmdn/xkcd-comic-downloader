@@ -4,7 +4,9 @@ BASE_URL = 'http://xkcd.com/'
 
 
 def scrape(post=None):
-    parse = parse_latest if post is None else parse_url
+    """Return data after parsing. If post not None, 
+    scrape for post img. src else post number."""
+    parse = parse_latest if post is None else parse_src
     return parse(request(post))
 
 
@@ -26,7 +28,7 @@ def parse_latest(response):
     return None
 
 
-def parse_url(response):
+def parse_src(response):
     """Parse comic img src from response body"""
     soup = bs4.BeautifulSoup(response.text, 'html.parser')
 
