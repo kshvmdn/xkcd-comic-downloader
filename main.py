@@ -11,7 +11,7 @@ def main():
 
     for i in range(1, scrape() + 1):
         if download(i, scrape(i)):
-            print('Downloaded post {}'.format(i))
+            print('Downloaded post {}'.format(str(i)))
 
 if __name__ == '__main__':
     main()
