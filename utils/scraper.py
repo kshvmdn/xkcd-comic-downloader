@@ -3,7 +3,7 @@ import requests, re, bs4
 BASE_URL = 'http://xkcd.com/'
 
 
-def main(post=None):
+def scrape(post=None):
     parse = parse_latest if post is None else parse_url
     return parse(request(post))
 

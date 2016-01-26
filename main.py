@@ -1,7 +1,7 @@
 import os
 
-from utils.scraper import main as scrape
-from utils.dl import main as download
+from utils.scraper import scrape
+from utils.dl import download
 
 
 def main():
